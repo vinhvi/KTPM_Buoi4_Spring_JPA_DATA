@@ -33,7 +33,7 @@ public class DataJpaApplication {
 //			// 4. Cho biết các chuyến bay có độ dài đường bay nhỏ hơn 10.000km và lớn hơn 8.000km.
 //			System.out.println("4. Cho biet cac chuyen bay co đo dai duong bay nho hon 10.000km va lon hơn 8.000km.");
 //			System.out.println((chuyenBayDAOImpl.listChuyenBay10To8()));
-			//5. Cho biết các chuyến bay xuất phát từ Sài Gòn (SGN) đi Ban Mê Thuộc (BMV).
+			// 5. Cho biết các chuyến bay xuất phát từ Sài Gòn (SGN) đi Ban Mê Thuộc (BMV).
 //			System.out.println("5.	Cho biet cac chuyen bay xuat phat tu Sai Gon (SGN) di Ban Me Thuoc (BMV).");
 //			System.out.println((chuyenBayDAOImpl.listChuyenBayDenVaDi("SGN", "BMV")));
 ////			//6. Có bao nhiêu chuyến bay xuất phát từ Sài Gòn (SGN).
@@ -45,26 +45,42 @@ public class DataJpaApplication {
 ////			//8.Cho biết tổng số lương phải trả cho các nhân viên.
 //			System.out.println(" 8.	Cho biet tong so luong phai tra cho cac nhan vien.");
 //			System.out.println(("Tong luong phai tra cho nhan vian NV: " + nhanVienDAOImpl.sumLuongNV()));
-			//9.Cho biết mã số của các phi công lái máy báy Boeing.
-			System.out.println(" 9.	Cho biet ma so cua cac phi cong lai may bay Boeing.");
-			List<Object[]> pr_list = new ArrayList<Object[]>();
-			pr_list.addAll(chungNhanDAOImpl.listChuyenBayDenVaDi());
-			for (Object[] objects : pr_list) {
-			System.out.println("Ma so phi cong: " + objects[0]);
+//			//9.Cho biết mã số của các phi công lái máy báy Boeing.
+//			System.out.println(" 9.	Cho biet ma so cua cac phi cong lai may bay Boeing.");
+//			List<Object[]> pr_list = new ArrayList<Object[]>();
+//			pr_list.addAll(chungNhanDAOImpl.listChuyenBayDenVaDi());
+//			for (Object[] objects : pr_list) {
+//			System.out.println("Ma so phi cong: " + objects[0]);
+//			}
+////						}
+////			//10. Cho biết các nhân viên có thể lái máy bay có mã số 747.
+//			System.out.println("10.	Cho biet cac nhan vien co the lai may bay co ma so 747.");
+//			for (Object[] objects : chungNhanDAOImpl.listNV747()) {
+//				System.out.println("Ma nhan vien: " + objects[0] + ", Ma may bay: " + objects[1] + ", Ten: " + objects[2]
+//						+ ", Luong: " + objects[3]);
+//			}
+////			//11. Cho biết mã số của các loại máy bay mà nhân viên có họ Nguyễn có thể lái.
+//			System.out.println("11.	Cho biet ma so cua cac loai may bay ma nhan vien co ho Nguyrn co the lai.");
+//			for (Object[] objects : chungNhanDAOImpl.listMaMBOfNguyen("Nguyen")) {
+//				System.out.println("Ma may bay la: " + objects[0]);
+//			}
+			// 12. Cho biết mã số của các phi công vừa lái được Boeing vừa lái được Airbus.
+			System.out.println("12.	Cho biet ma so cua cac phi cong vua lai duoc Boeing vua lai duoc Airbus.");
+			for (Object[] objects : chungNhanDAOImpl.listMaMVOfLoaiMB("Boeing", "Airbus")) {
+				System.out.println("Ma phi cong la: " + objects[0]);
 			}
-//						}
-//			//10. Cho biết các nhân viên có thể lái máy bay có mã số 747.
-			System.out.println("10.	Cho biet cac nhan vien co the lai may bay co ma so 747.");
-			for (Object[] objects : chungNhanDAOImpl.listNV747()) {
-				System.out.println("Ma nhan vien: " + objects[0] + ", Ma may bay: " + objects[1] + ", Ten: " + objects[2]
-						+ ", Luong: " + objects[3]);
+//			//13. Cho biết các loại máy bay có thể thực hiện chuyến bay VN280.
+			System.out.println("13.	Cho biet cac loai may bay co the thuc hien chuyen bay VN280.");
+			for (Object[] objects : chungNhanDAOImpl.listLoaiByMaCB("VN280")) {
+				System.out.println("Loai may bay : " + objects[0]);
 			}
-//			//11. Cho biết mã số của các loại máy bay mà nhân viên có họ Nguyễn có thể lái.
-			System.out.println("11.	Cho biet ma so cua cac loai may bay ma nhan vien co ho Nguyrn co the lai.");
-			for (Object[] objects : chungNhanDAOImpl.listMaMBOfNguyen("Nguyen")) {
-				System.out.println("Ma may bay la: " + objects[0]);
+//			//14. Cho biết các chuyến bay có thể được thực hiện bởi máy bay Airbus A320.
+			System.out.println(" 14.Cho biet cac chuyen bay co the duoc thuc hien boi may bay Airbus A320.");
+			for (Object[] objects : chungNhanDAOImpl.listChuyenBayByLoai("Airbus A320")) {
+				System.out.println("Ma chuyen bay: " + objects[0] + ", Ga di: " + objects[1] + ", Ga den: " + objects[2]
+						+ ", Do dai: " + objects[3] + ", Gio di: " + objects[4] + ", Gio den: " + objects[5]
+						+ ", Chi phi: " + objects[6]);
 			}
-//			
 		});
 	}
 
