@@ -25,11 +25,23 @@ public class DataJpaApplication {
 //			System.out.println(" 2. Cho biet cac loai may bay co tam bay lon hon 10,000km.");
 //			System.out.println((mayBayDAOImpl.listTamBay10000(10000)));
 			// 3. Tìm các nhân viên có lương nhỏ hơn 10,000
-			System.out.println("3. Tim cac nhan vien có luong nho hon 10,000");
-			System.out.println((mayBayDAOImpl.listLoaiBoeing("Boeing")));
+//			System.out.println("3. Tim cac nhan vien có luong nho hon 10,000");
+//			System.out.println((mayBayDAOImpl.listLoaiBoeing("Boeing")));
 //			// 4. Cho biết các chuyến bay có độ dài đường bay nhỏ hơn 10.000km và lớn hơn 8.000km.
-			System.out.println("4. Cho biet cac chuyen bay co đo dai duong bay nho hon 10.000km va lon hơn 8.000km.");
-			System.out.println((chuyenBayDAOImpl.listChuyenBay10To8()));
+//			System.out.println("4. Cho biet cac chuyen bay co đo dai duong bay nho hon 10.000km va lon hơn 8.000km.");
+//			System.out.println((chuyenBayDAOImpl.listChuyenBay10To8()));
+			//5. Cho biết các chuyến bay xuất phát từ Sài Gòn (SGN) đi Ban Mê Thuộc (BMV).
+			System.out.println("5.	Cho biet cac chuyen bay xuat phat tu Sai Gon (SGN) di Ban Me Thuoc (BMV).");
+			System.out.println((chuyenBayDAOImpl.listChuyenBayDenVaDi("SGN", "BMV")));
+//			//6. Có bao nhiêu chuyến bay xuất phát từ Sài Gòn (SGN).
+			System.out.println("6.	Co bao nhieu chuyen bay xuat phat tu Sai Gon (SGN).");
+			System.out.println(("Số chuyến bay xuất phát từ SGN: " + chuyenBayDAOImpl.numChuyenBaySGN()));
+//			//7. Có bao nhiêu loại máy báy Boeing.
+			System.out.println("7.	Co bao nhieu loai may bay Boeing.");
+			System.out.println(("So loai may bay Boeing: " + mayBayDAOImpl.numMayBayBeoing()));
+//			//8.Cho biết tổng số lương phải trả cho các nhân viên.
+			System.out.println(" 8.	Cho biet tong so luong phai tra cho cac nhan vien.");
+			System.out.println(("Tong luong phai tra cho nhan vian NV: " + nhanVienDAOImpl.sumLuongNV()));
 		});
 	}
 
